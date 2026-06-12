@@ -1,8 +1,3 @@
-// lib/main.dart
-// ============================================================
-// Ostad App: সুন্দর হোম পেজ + অ্যাসাইনমেন্ট ১, ২, ৩
-// ============================================================
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -26,7 +21,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// ==================== সুন্দর হোম পেজ ====================
+
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -48,7 +43,7 @@ class HomePage extends StatelessWidget {
         child: SafeArea(
           child: Column(
             children: [
-              // হেডার সেকশন
+              
               const SizedBox(height: 40),
               const Icon(
                 Icons.school,
@@ -67,7 +62,7 @@ class HomePage extends StatelessWidget {
               ),
               const SizedBox(height: 8),
               const Text(
-                'আপনার অ্যাসাইনমেন্ট সমূহ',
+                'অ্যাসাইনমেন্ট সমূহ',
                 style: TextStyle(
                   fontSize: 16,
                   color: Colors.white70,
@@ -75,7 +70,7 @@ class HomePage extends StatelessWidget {
               ),
               const SizedBox(height: 40),
 
-              // কার্ড লিস্ট
+              
               Expanded(
                 child: ListView(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -84,7 +79,7 @@ class HomePage extends StatelessWidget {
                       context: context,
                       number: 1,
                       title: 'Language Learning UI',
-                      description: 'Column, Row, Image Widget ব্যবহার করে ভাষা শেখার UI',
+                      description: 'ভাষা শেখার UI',
                       icon: Icons.language,
                       color: Colors.blue,
                       gradient: const LinearGradient(
@@ -97,7 +92,7 @@ class HomePage extends StatelessWidget {
                       context: context,
                       number: 2,
                       title: 'Profile Card',
-                      description: 'Column, Row, Image + Bonus Toast (Hello World)',
+                      description: '(Hello World)',
                       icon: Icons.person,
                       color: Colors.green,
                       gradient: const LinearGradient(
@@ -110,7 +105,7 @@ class HomePage extends StatelessWidget {
                       context: context,
                       number: 3,
                       title: 'Quiz App',
-                      description: 'ListView, Card, Chip, Expanded ব্যবহার করে কুইজ অ্যাপ',
+                      description: 'কুইজ অ্যাপ',
                       icon: Icons.quiz,
                       color: Colors.orange,
                       gradient: const LinearGradient(
@@ -129,7 +124,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  // সুন্দর কার্ড ডিজাইন
+  
   Widget _buildAssignmentCard({
     required BuildContext context,
     required int number,
@@ -169,7 +164,7 @@ class HomePage extends StatelessWidget {
             padding: const EdgeInsets.all(20.0),
             child: Row(
               children: [
-                // বাম পাশে আইকন সার্কেল
+                
                 Container(
                   width: 65,
                   height: 65,
@@ -184,7 +179,7 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(width: 16),
-                // ডান পাশে টেক্সট
+                
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -231,7 +226,7 @@ class HomePage extends StatelessWidget {
                     ],
                   ),
                 ),
-                // ডান পাশে তীর চিহ্ন
+                
                 Icon(
                   Icons.arrow_forward_ios,
                   size: 18,
@@ -246,7 +241,6 @@ class HomePage extends StatelessWidget {
   }
 }
 
-// ==================== অ্যাসাইনমেন্ট ১: ল্যাঙ্গুয়েজ লার্নিং UI ====================
 class LearningScreen extends StatelessWidget {
   const LearningScreen({super.key});
 
@@ -284,7 +278,7 @@ class LearningScreen extends StatelessWidget {
               ),
               const SizedBox(height: 40),
 
-              // Image
+              
               Center(
                 child: Image.network(
                   'https://cdn-icons-png.flaticon.com/512/2885/2885437.png',
@@ -294,7 +288,6 @@ class LearningScreen extends StatelessWidget {
               ),
               const SizedBox(height: 20),
 
-              // Heading
               const Text('Make every day',
                   style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold)),
               const Text('a learning',
@@ -303,7 +296,7 @@ class LearningScreen extends StatelessWidget {
                   style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold)),
               const SizedBox(height: 30),
 
-              // HI & 喂
+            
               const Row(
                 children: [
                   Text('HI',
@@ -321,14 +314,14 @@ class LearningScreen extends StatelessWidget {
               ),
               const SizedBox(height: 20),
 
-              // Description
+            
               const Text(
                 'An engaging way to master new languages\nand connect with cultures worldwide',
                 style: TextStyle(fontSize: 16, color: Colors.grey),
               ),
               const SizedBox(height: 40),
 
-              // Button
+            
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
@@ -351,7 +344,6 @@ class LearningScreen extends StatelessWidget {
   }
 }
 
-// ==================== অ্যাসাইনমেন্ট ২: প্রোফাইল কার্ড ====================
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
@@ -426,7 +418,7 @@ class ProfileScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 24),
 
-                  // Bonus Button
+                  
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton.icon(
@@ -469,7 +461,7 @@ class ProfileScreen extends StatelessWidget {
   }
 }
 
-// ==================== অ্যাসাইনমেন্ট ৩: কুইজ অ্যাপ ====================
+
 class QuizScreen extends StatefulWidget {
   const QuizScreen({super.key});
 
