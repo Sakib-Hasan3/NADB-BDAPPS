@@ -1,8 +1,3 @@
-// ============================================================
-// অ্যাসাইনমেন্ট ২: প্রোফাইল কার্ড
-// বিষয়: Column, Row, Image Widget + Bonus Toast
-// ============================================================
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -29,7 +24,6 @@ class MyApp extends StatelessWidget {
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
-  // Bonus: Toast দেখানোর ফাংশন
   void _showHelloWorldToast(BuildContext context) {
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
@@ -61,12 +55,9 @@ class ProfileScreen extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(24.0),
               child: Column(
-                // ✅ Requirement 1: COLUMN ব্যবহার করা হয়েছে
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  // ========== 1. Profile Image (Image Widget) ==========
-                  // ✅ Requirement 2: IMAGE ব্যবহার করা হয়েছে
                   const CircleAvatar(
                     radius: 60,
                     backgroundImage: NetworkImage(
@@ -75,7 +66,7 @@ class ProfileScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 16),
 
-                  // ========== 2. Name ==========
+                  
                   const Text(
                     'আবির হাসান',
                     style: TextStyle(
@@ -85,7 +76,7 @@ class ProfileScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 4),
 
-                  // ========== 3. Designation ==========
+                  
                   const Text(
                     'Flutter Developer',
                     style: TextStyle(
@@ -96,8 +87,7 @@ class ProfileScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
 
-                  // ========== 4. Location & Email (Row ব্যবহার করে) ==========
-                  // ✅ Requirement 3: ROW ব্যবহার করা হয়েছে
+                 
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: const [
@@ -118,7 +108,7 @@ class ProfileScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
 
-                  // ========== 5. Bio ==========
+                
                   const Text(
                     'মোবাইল অ্যাপ ডেভেলপমেন্টে আগ্রহী। '
                     'ফ্লাটার দিয়ে সুন্দর UI বানাতে এবং '
@@ -132,8 +122,7 @@ class ProfileScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 24),
 
-                  // ========== 6. Bonus Button (Toast "Hello World") ==========
-                  // ✅ Bonus: বাটনে ক্লিক করলে "Hello World" Toast দেখাবে
+         
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton.icon(
