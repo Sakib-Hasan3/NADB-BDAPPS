@@ -1,8 +1,3 @@
-// ============================================================
-// অ্যাসাইনমেন্ট ৩: সিম্পল কুইজ অ্যাপ
-// বিষয়: Column, ListView, Card, Chip, Expanded, Bonus Toast
-// ============================================================
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -35,17 +30,16 @@ class QuizScreen extends StatefulWidget {
 }
 
 class _QuizScreenState extends State<QuizScreen> {
-  // ========== প্রশ্ন ও উত্তর ডাটা ==========
   final List<Map<String, dynamic>> _questions = [
     {
       'question': 'Flutter কোন কোম্পানি তৈরি করেছে?',
       'options': ['Google', 'Facebook', 'Microsoft', 'Apple'],
-      'correct': 0, // Google
+      'correct': 0, 
     },
     {
       'question': 'Flutter এ UI তৈরি করতে কোন ভাষা ব্যবহার করা হয়?',
       'options': ['Kotlin', 'Swift', 'Dart', 'JavaScript'],
-      'correct': 2, // Dart
+      'correct': 2,
     },
     {
       'question': 'StatelessWidget এবং StatefulWidget এর মধ্যে মূল পার্থক্য কী?',
@@ -55,21 +49,20 @@ class _QuizScreenState extends State<QuizScreen> {
         'দুটোই একই রকম',
         'কোনটিই নয়',
       ],
-      'correct': 1, // StatefulWidget এ State পরিবর্তন করা যায়
+      'correct': 1, 
     },
   ];
 
-  // ছাত্রদের নির্বাচিত উত্তর সংরক্ষণের জন্য
+
   final List<int?> _selectedAnswers = [null, null, null];
 
-  // উত্তর নির্বাচনের ফাংশন
+
   void _selectAnswer(int qIndex, int optIndex) {
     setState(() {
       _selectedAnswers[qIndex] = optIndex;
     });
   }
 
-  // ========== Bonus: Toast দেখানোর ফাংশন ==========
   void _showHelloWorldToast(BuildContext context) {
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
@@ -81,7 +74,7 @@ class _QuizScreenState extends State<QuizScreen> {
     );
   }
 
-  // ফলাফল দেখানোর ফাংশন
+
   void _showResult() {
     int score = 0;
     for (int i = 0; i < _questions.length; i++) {
@@ -90,10 +83,8 @@ class _QuizScreenState extends State<QuizScreen> {
       }
     }
 
-    // ✅ Bonus: Toast দেখানো হচ্ছে
     _showHelloWorldToast(context);
 
-    // ফলাফল ডায়ালগ দেখানো
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
@@ -108,7 +99,6 @@ class _QuizScreenState extends State<QuizScreen> {
           TextButton(
             onPressed: () {
               Navigator.pop(context);
-              // সব উত্তর রিসেট করা
               setState(() {
                 for (int i = 0; i < _selectedAnswers.length; i++) {
                   _selectedAnswers[i] = null;
@@ -133,12 +123,9 @@ class _QuizScreenState extends State<QuizScreen> {
         elevation: 0,
       ),
       body: Column(
-        // ✅ Column ব্যবহার করা হয়েছে
         children: [
           const SizedBox(height: 12),
 
-          // ========== Chip Section (Wrap widget ব্যবহার করে) ==========
-          // ✅ Chip ব্যবহার করা হয়েছে
           Wrap(
             spacing: 8,
             alignment: WrapAlignment.center,
@@ -157,9 +144,7 @@ class _QuizScreenState extends State<QuizScreen> {
           ),
           const SizedBox(height: 8),
 
-          // ========== ListView (Expanded দিয়ে বাকি জায়গা নেওয়া) ==========
-          // ✅ Expanded ব্যবহার করা হয়েছে (ListView কে বাকি জায়গা দিতে)
-          // ✅ ListView ব্যবহার করা হয়েছে
+  
           Expanded(
             child: ListView.builder(
               padding: const EdgeInsets.all(16),
@@ -170,7 +155,7 @@ class _QuizScreenState extends State<QuizScreen> {
             ),
           ),
 
-          // ========== Submit Button ==========
+   
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: SizedBox(
@@ -196,14 +181,11 @@ class _QuizScreenState extends State<QuizScreen> {
       ),
     );
   }
-
-  // ========== প্রতিটি প্রশ্নের Card বানানোর ফাংশন ==========
   Widget _buildQuestionCard(int index) {
     final question = _questions[index];
     final selected = _selectedAnswers[index];
 
     return Card(
-      // ✅ Card ব্যবহার করা হয়েছে
       margin: const EdgeInsets.only(bottom: 16),
       elevation: 4,
       shape: RoundedRectangleBorder(
@@ -214,7 +196,6 @@ class _QuizScreenState extends State<QuizScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // প্রশ্ন নম্বর ও টেক্সট
             Row(
               children: [
                 Container(
@@ -244,8 +225,6 @@ class _QuizScreenState extends State<QuizScreen> {
               ),
             ),
             const SizedBox(height: 12),
-
-            // ✅ ListTile ব্যবহার করে অপশন গুলো দেখানো হচ্ছে
             ...List.generate(question['options'].length, (optIndex) {
               return ListTile(
                 leading: Radio<int>(
